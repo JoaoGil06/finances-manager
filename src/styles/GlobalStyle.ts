@@ -87,4 +87,8 @@ a {
   text-decoration: none;
 }
 
+button:focus, button:focus-visible {
+  outline: none;
+}
+
 `;
