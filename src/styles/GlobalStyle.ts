@@ -2,7 +2,7 @@ import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
   :root {
-  --venetianNights: #9277FF ;
+  --venetianNights: #7C5DFA ;
   --forgottenPurple: #9277FF;
 
   --konBlack: #1E2139;
