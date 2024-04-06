@@ -20,8 +20,10 @@ export const DropdownButton = styled.div<DropdownButtonProps>`
   letter-spacing: -0.25px;
   user-select: none;
   color: var(--ruinedSmores);
+
   &:hover {
     cursor: pointer;
+    border: 1px solid var(--venetianNights);
   }
 
   border: ${(props) =>
@@ -29,6 +31,8 @@ export const DropdownButton = styled.div<DropdownButtonProps>`
       ? "1px solid var(--venetianNights)"
       : "1px solid var(--stoicWhite)"};
   border-radius: 0.4rem;
+
+  transition: all 0.2s;
 `;
 
 export const ChevronDown = styled(ReactSVG)``;
@@ -58,6 +62,7 @@ export const DropdownItem = styled.div`
   border-bottom: 1px solid var(--stoicWhite);
 
   cursor: pointer;
+  transition: all 0.2s;
 
   &:hover {
     color: var(--venetianNights);
