@@ -1,9 +1,11 @@
+import React from "react";
 import ButtonProps from "./types/ButtonProps.type";
 import {
   Button as StyledButton,
   ButtonLabel,
   ButtonIcon,
 } from "./styles/Button.styledcomponent";
+
 export const Button = ({
   label,
   onClick,

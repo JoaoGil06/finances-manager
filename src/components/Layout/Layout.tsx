@@ -1,9 +1,11 @@
+import React from 'react';
 import { Outlet } from "react-router-dom";
 import Button from "../Button/index";
 import { ButtonVariant } from "../Button/types/ButtonVariant.enum";
 import IconPlus from "../../assets/icon-plus.svg";
 import { Input } from "../Input/Input";
 import Dropdown from "../Dropdown/index";
+import Datepicker from '../Datepicker/Datepicker';
 
 export const Layout = () => {
   const dropdownValues = [
@@ -31,7 +33,7 @@ export const Layout = () => {
 
   return (
     <>
-      <Button
+      {/* <Button
         label={"New Invoice"}
         onClick={() => {}}
         variant={ButtonVariant.Primary}
@@ -45,7 +47,8 @@ export const Layout = () => {
         showLabel
         placeholder={"Placeholder de teste"}
       />
-      <Dropdown values={dropdownValues} onChange={() => {}} />
+      <Dropdown values={dropdownValues} onChange={() => {}} /> */}
+      <Datepicker />  
       <Outlet />
     </>
   );
