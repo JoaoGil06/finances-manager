@@ -82,12 +82,21 @@ export const DayColGrid = styled.div<DayColGridProps>`
   grid-template-columns: repeat(7, 1fr);
 
   ${({ heading }) =>
-    heading &&
-    css`
-      font-weight: 700;
-    `}
+    heading
+      ? css`
+          font-weight: 700;
+        `
+      : css`
+          gap: 1.2rem;
+          margin-top: 1.2rem;
+          margin-bottom: 1.2rem;
+          cursor: pointer;
+        `}
 
   .active {
-    background: red;
+    background: var(--venetianNights);
+    color: var(--white);
+    font-weight: 700;
+    border-radius: 0.4rem;
   }
 `;

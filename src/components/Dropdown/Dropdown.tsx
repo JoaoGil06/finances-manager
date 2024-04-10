@@ -7,39 +7,24 @@ import {
   DropdownItem,
 } from "./styles/Dropdown.styledcomponent";
 import IconChevronDown from "../../assets/icon-arrow-down.svg";
-import { useEffect, useState } from "react";
 import DropdownProps from "./types/DropdownProps.type";
-import { DropdownItem as DropdownItemType } from "./types/DropdownItem.type";
+import { useDropdown } from "./hooks/useDropdown";
 
 export const Dropdown = ({ values, onChange, defaultValue }: DropdownProps) => {
-  const [isOpened, setIsOpened] = useState<boolean>(false);
-  const [selectedItem, setSelectedItem] = useState<
-    DropdownItemType | undefined
-  >({} as DropdownItemType);
-
-  useEffect(() => {
-    if (defaultValue) {
-      const findedDefaultValue = values.find(
-        (value) => value.value === defaultValue
-      );
-      if (findedDefaultValue) {
-        setSelectedItem(findedDefaultValue);
-      }
-    }
-  }, [defaultValue, values]);
-
-  const onClickDropdownItem = (item: DropdownItemType) => {
-    onChange(item);
-    setSelectedItem(item);
-    setIsOpened(false);
-  };
+  const {
+    isOpened,
+    onClickDropdownItem,
+    selectedItem,
+    onClickDropdownButton,
+  } = useDropdown({
+    onChange,
+    values,
+    defaultValue,
+  });
 
   return (
     <DropdownContainer>
-      <DropdownButton
-        onClick={() => setIsOpened(!isOpened)}
-        isActive={isOpened}
-      >
+      <DropdownButton onClick={onClickDropdownButton} isActive={isOpened}>
         {selectedItem?.label ? selectedItem.label : "Select"}
         <ChevronDown src={IconChevronDown} />
       </DropdownButton>

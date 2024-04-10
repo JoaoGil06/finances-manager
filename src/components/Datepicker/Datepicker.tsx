@@ -32,8 +32,6 @@ const Datepicker = () => {
     onSelectDate,
   } = useDatepicker();
 
-  console.log(new Date());
-
   const renderDateString = () => {
     const m = moment(selectedDate);
     return m.format("DD MMMM YYYY");
@@ -56,7 +54,7 @@ const Datepicker = () => {
           </DatepickerHeader>
           <DatepickerBody>
             <DayColGrid heading>
-              {dayNames.map((day) => (
+              {dayNames.map((day: string) => (
                 <p key={day}>{day}</p>
               ))}
             </DayColGrid>
